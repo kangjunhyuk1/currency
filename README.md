@@ -213,5 +213,61 @@
 ```
 
 
+--------
 
+SQL
+```
+create database Schedule_management;
+
+create table users (
+	user_id bigint not NULL auto_increment,
+    user_name varchar(12) not null,
+    email varchar(100) not null,
+    created_date datetime DEFAULT CURRENT_TIMESTAMP,
+    modified_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    primary key(user_id)
+	);
+
+
+create table currency(
+	currencyId bigint(30) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id bigint,
+    currencyName varchar(100) not null,
+    exchangeRate bigint not null,
+    created_date datetime DEFAULT CURRENT_TIMESTAMP,
+    modified_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    primary key(calendar_id),
+    foreign key (user_id) references users (user_id)
+    );
+    
+    
+   -- 데이터 추가(user)--
+    INSERT INTO
+		users (user_id, user_name, email, created_date, modified_date)
+    VALUES
+		(1, 'junhyuk', 'abc@gmail.com', now(), now());
+
+   -- 데이터 추가(currency) --
+     INSERT INTO
+		currency (currencyId, currencyName, exchangeRate, created_date, modified_date)
+    VALUES
+		(1, 'dollar', '1390', now(), now());
+        
+	-- 데이터 조회(단건)--
+    select user_id
+    from users
+    where user_id = 1;
+    
+    -- 데이터 조회(다건) --
+    select *
+    from users;
+    
+    -- 데이터 수정 --
+    update users
+    set user_name = '강준혁3';
+    
+    -- 데이터 삭제 --
+    delete from user
+    where user_name = '강준혁3';
+```
 
