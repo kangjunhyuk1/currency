@@ -1,4 +1,4 @@
-* 유저 생성 API
+![image](https://github.com/user-attachments/assets/cd943a51-3f13-4f13-bcbf-8473490fb25b)* 유저 생성 API
 
 |기능|Method|URL|Header|상태코드|Request필수 여부|
 |------|---|---|---|---|---|
@@ -214,6 +214,9 @@
 
 
 --------
+
+
+-------
 
 SQL
 ```
