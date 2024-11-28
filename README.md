@@ -216,7 +216,7 @@
 --------
 * erd
 
-![image](https://github.com/user-attachments/assets/5669f29f-d75a-4782-8cd0-d7ec9d850f6c)
+![image](https://github.com/user-attachments/assets/92f22f9c-3876-45f1-9aba-66b7f8739a33)
 
 -------
 
