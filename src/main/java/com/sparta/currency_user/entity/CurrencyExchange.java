@@ -17,7 +17,7 @@ public class CurrencyExchange extends BaseEntity{
     @Column(nullable = false)
     private Long afterExchange;
 
-    private String status;
+    private String status = "Y";
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
