@@ -1,7 +1,9 @@
 package com.sparta.currency_user.controller;
 
-import com.sparta.currency_user.dto.UserRequestDto;
-import com.sparta.currency_user.dto.UserResponseDto;
+import com.sparta.currency_user.dto.signup.SignupRequestDto;
+import com.sparta.currency_user.dto.signup.SignupResponseDto;
+import com.sparta.currency_user.dto.user.UserRequestDto;
+import com.sparta.currency_user.dto.user.UserResponseDto;
 import com.sparta.currency_user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -36,4 +38,7 @@ public class UserController {
         userService.deleteUserById(id);
         return ResponseEntity.ok().body("정상적으로 삭제되었습니다.");
     }
+
+    @PostMapping
+    public SignupResponseDto signup(SignupRequestDto signupRequestDto )
 }
