@@ -16,15 +16,14 @@ public class UserResponseDto {
         this.email = user.getEmail();
     }
 
-    public UserResponseDto(Long id, String name, String email) {
-        this.userId = id;
+    public UserResponseDto(String name, String email) {
+        this.userId = userId;
         this.name = name;
         this.email = email;
     }
 
     public static UserResponseDto toDto(User user) {
         return new UserResponseDto(
-                user.getUserId(),
                 user.getName(),
                 user.getEmail()
         );
