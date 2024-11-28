@@ -264,10 +264,10 @@ create table currency(
     
     -- 데이터 수정 --
     update users
-    set user_name = '강준혁3';
+    set user_name = 'kangjun';
     
     -- 데이터 삭제 --
     delete from user
-    where user_name = '강준혁3';
+    where user_name = 'kangjun';
 ```
 
