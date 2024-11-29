@@ -213,6 +213,125 @@
 ```
 
 
+* 환전 테이블 생성API
+
+
+|기능|Method|URL|Header|상태코드|Request필수 여부|
+|------|---|---|---|---|---|
+|환전 테이블 생성|Post|/exchange|content-type : application/json|200 정상등록, 400 잘못된 요청, 404 찾을 수 없음||
+
+* 환전 요청 Request
+```
+{
+	"CurrencyId" : "1",
+	"beforeExchange" : "1000"
+}
+```
+
+* 환전 요청 성공 Response
+```
+{
+	"currencyExchangeId" : "1",
+	"after_exchange : "0.72"
+}
+```
+
+*환전 요청 실패(400) Response
+```
+환전할 금액을 입력해 주세요
+```
+
+*환전 요청 실패(404) Response
+```
+찾을 수 없는 화폐입니다
+```
+
+
+
+*환전 테이블 조회 API
+|기능|Method|URL|Header|상태코드|Request필수 여부|
+|------|---|---|---|---|---|
+|환전 테이블 조회|GET|/exchange/check||200 정상등록||
+
+* 환전 테이블 조회 요청Request
+```
+```
+
+* 환전 테이블 조회 성공 Response
+```
+[
+{
+	"currencyExchangeId" : "1",
+	"beforeExchange" : "1000",
+	"afterExchange" : "0.72",
+	"status' : "Y",
+	"userId" : "1",
+	"currencyId" : "1"
+},
+{
+	"currencyExchangeId" : "2",
+	"beforeExchange" : "1000",
+	"afterExchange" : "0.72",
+	"status' : "Y",
+	"userId" : "2",
+	"currencyId" : "1"
+}
+]
+```
+
+* 환전 요청 조회(단건) API
+|기능|Method|URL|Header|상태코드|Request필수 여부|
+|------|---|---|---|---|---|
+|환전 테이블 조회|GET|/exchange/check/{id}||200 정상등록||
+
+* 환전 요청 조회(단건) 요청 Request
+```
+```
+
+* 환전 요청 조회(단건) 요청 Response
+```
+{
+	"currencyExchangeId" : "1",
+	"beforeExchange" : "1000",
+	"afterExchange" : "0.72",
+	"status' : "Y",
+	"userId" : "1",
+	"currencyId" : "1"
+
+}
+```
+
+*환전 요청 조회(단건) 실패(404) Response
+```
+존재하지 않는 id입니다
+```
+
+* 환전 테이블 상태 변경 API
+* 환전 요청 조회(단건) API
+|기능|Method|URL|Header|상태코드|Request필수 여부|
+|------|---|---|---|---|---|
+|환전 테이블 상태 변경|PATCH|/exchange/{id}||200 정상등록,400 잘못된 요청||
+
+* 환전 테이블 상태 변경 요청 Request
+```
+{
+	"status' : "N"
+}
+```
+
+* 환전 테이블 상태 변경 요청 성공 Response
+```
+상태가 변경되었습니다
+```
+
+* 환전 테이블 상태 변경 요청 실패(400) Response
+{
+지원하지 않는 상태입니다
+}
+
+
+
+
 --------
 * erd
 
